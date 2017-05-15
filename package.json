@@ -1,0 +1,25 @@
+{
+  "name": "twitterbot",
+  "version": "1.0.0",
+  "description": "Simple Twitter Bot",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "provision": "bash provision.sh rg-web twitterbot",
+    "publish": "npm run publish:dir && npm run publish:cp && npm run publish:install",
+    "publish:dir": "mkdirp wwwroot/App_Data\\jobs\\continuous\\twitterbot\\webjob",
+    "publish:cp": "cp package.json wwwroot/App_Data\\jobs\\continuous\\twitterbot\\webjob & cp bot.js wwwroot/App_Data\\jobs\\continuous\\twitterbot\\webjob",
+    "publish:install": "cd wwwroot/App_Data\\jobs\\continuous\\twitterbot\\webjob && npm install --production",
+    "clean": "rimraf wwwroot"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "twit": "^2.2.5"
+  },
+  "devDependencies": {
+    "mkdirp": "^0.5.1",
+    "rimraf": "^2.6.1"
+  }
+}
