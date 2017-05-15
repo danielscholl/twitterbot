@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "predeploy": "npm run clean",
-    "deploy": "bash provision.sh rg-web twitterbot",
+    "deploy": "bash provision.sh",
     "clean": "rimraf wwwroot"
   },
   "author": "",

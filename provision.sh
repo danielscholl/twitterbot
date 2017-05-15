@@ -40,10 +40,15 @@ if [ -d $JOB_DIR ]; then
 	rm -R $JOB_DIR/*
 fi
 
+mkdir -p $JOB_DIR
+
 cp package.json $JOB_DIR
 cp server.js $JOB_DIR
 cd $JOB_DIR
+
 npm install --production
+
 git add -A
 git commit -m "Code Shipped"
+
 git push origin master
