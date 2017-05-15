@@ -44,8 +44,6 @@ cp package.json $JOB_DIR
 cp server.js $JOB_DIR
 cd $JOB_DIR
 npm install --production
-
-# cd azure
-# git add -A
-# git commit -m "Code Shipped"
-# git push origin master
+git add -A
+git commit -m "Code Shipped"
+git push origin master

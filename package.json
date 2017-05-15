@@ -5,11 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "provision": "bash provision.sh rg-web twitterbot",
-    "publish": "npm run publish:dir && npm run publish:cp && npm run publish:install",
-    "publish:dir": "mkdirp wwwroot/App_Data\\jobs\\continuous\\twitterbot\\webjob",
-    "publish:cp": "cp package.json wwwroot/App_Data\\jobs\\continuous\\twitterbot\\webjob & cp bot.js wwwroot/App_Data\\jobs\\continuous\\twitterbot\\webjob",
-    "publish:install": "cd wwwroot/App_Data\\jobs\\continuous\\twitterbot\\webjob && npm install --production",
+    "predeploy": "npm run clean",
+    "deploy": "bash provision.sh rg-web twitterbot",
     "clean": "rimraf wwwroot"
   },
   "author": "",
